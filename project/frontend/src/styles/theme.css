@@ -1,0 +1,107 @@
+:root {
+  /* Color: temple stone, kumkum vermillion, brass gold, dusk indigo */
+  --bg: #F1E8D8;
+  --bg-alt: #FFFFFF;
+  --surface: #FBF5EA;
+  --ink: #2B1B12;
+  --ink-soft: #5B4A3C;
+  --primary: #7A1F2B;
+  --primary-dark: #5C1620;
+  --primary-tint: #F4DEDE;
+  --gold: #B8862E;
+  --gold-light: #D9A94E;
+  --indigo: #2B3A55;
+  --indigo-dark: #1C2740;
+  --success: #3F6B4A;
+  --success-tint: #E1EEE3;
+  --danger: #A63232;
+  --danger-tint: #F6DEDE;
+  --border: #E0D2B8;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-label: "Marcellus", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 4px 20px rgba(43, 27, 18, 0.08);
+  --shadow-lift: 0 12px 32px rgba(43, 27, 18, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--primary-dark);
+  margin: 0 0 0.4em;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3 { font-size: 1.4rem; }
+
+p { margin: 0 0 1em; color: var(--ink-soft); }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.eyebrow {
+  font-family: var(--font-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--gold);
+}
+
+button, input, select, textarea { font-family: var(--font-body); }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Arch divider — signature motif: a repeating gopuram/kalash silhouette */
+.arch-divider {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 8px 0 32px;
+  opacity: 0.55;
+}
+.arch-divider span {
+  width: 14px;
+  height: 20px;
+  background: var(--gold);
+  clip-path: polygon(50% 0%, 100% 45%, 100% 100%, 0% 100%, 0% 45%);
+}
+.arch-divider span:nth-child(2) { height: 28px; }
+.arch-divider span:nth-child(4) { height: 28px; }

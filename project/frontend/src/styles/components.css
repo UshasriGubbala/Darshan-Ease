@@ -1,0 +1,202 @@
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); box-shadow: var(--shadow-soft); }
+.btn-gold { background: var(--gold); color: #2B1B12; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { background: transparent; border-color: var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary-tint); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { background: var(--surface); }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-danger:hover { background: #8a2929; }
+.btn-sm { padding: 8px 16px; font-size: 0.85rem; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-block { width: 100%; }
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+.navbar-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.brand-mark {
+  width: 30px; height: 30px;
+  background: var(--primary);
+  clip-path: polygon(50% 0%, 100% 45%, 100% 100%, 0% 100%, 0% 45%);
+}
+.nav-links { display: flex; align-items: center; gap: 22px; }
+.nav-links a { color: var(--ink); font-weight: 500; font-size: 0.95rem; }
+.nav-links a.active { color: var(--primary); }
+.nav-links a:hover { text-decoration: none; color: var(--primary); }
+
+/* Footer */
+.footer {
+  background: var(--indigo-dark);
+  color: #E9E4D8;
+  margin-top: 64px;
+  padding: 40px 0 24px;
+}
+.footer a { color: #E9E4D8; opacity: 0.85; }
+.footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer small { opacity: 0.6; display: block; margin-top: 20px; }
+
+/* Cards */
+.card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+.card-pad { padding: 24px; }
+
+/* Temple card — signature arch-topped niche shape */
+.temple-card {
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.temple-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.temple-card-image-wrap {
+  position: relative;
+  height: 190px;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 60% 100%, 40% 100%, 0 82%);
+}
+.temple-card-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.temple-card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+.temple-card-body h3 { margin-bottom: 4px; }
+.temple-card-location { font-size: 0.85rem; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+.temple-card-body p { font-size: 0.9rem; flex: 1; }
+
+/* Forms */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.form-control:focus { outline: 2px solid var(--gold-light); border-color: var(--gold); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+.form-error {
+  background: var(--danger-tint);
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+.form-success {
+  background: var(--success-tint);
+  color: var(--success);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.auth-shell {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.badge-confirmed { background: var(--success-tint); color: var(--success); }
+.badge-cancelled { background: var(--danger-tint); color: var(--danger); }
+.badge-completed { background: #E4E9F3; color: var(--indigo); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg-alt); }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+thead { background: var(--surface); }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tbody tr:hover { background: var(--surface); }
+tbody tr:last-child td { border-bottom: none; }
+
+/* Slot picker */
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+.slot-btn {
+  padding: 10px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.slot-btn.selected { border-color: var(--primary); background: var(--primary-tint); color: var(--primary-dark); }
+.slot-btn:disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ink-soft);
+}
+
+.spinner {
+  width: 28px; height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
